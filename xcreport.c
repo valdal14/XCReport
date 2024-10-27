@@ -36,7 +36,7 @@ int execute(char *command, char *command_description) {
 int run_tests() {
     ConsoleCommand execute_tests;
     execute_tests.command = CMD_XCODE_BUILD;
-    execute_tests.command_description = "running xcode tests";
+    execute_tests.command_description = "Running xcode tests";
     printf(GREEN "Executing xcodebuild test, please wait...\n" RESET);
     printf(RESET "\n");
     int xcode_result = execute(execute_tests.command, execute_tests.command_description);
@@ -64,7 +64,7 @@ int make_dir() {
 int convert_to_xml() {
     ConsoleCommand create_XML;
     create_XML.command = CMD_CREATE_XML;
-    create_XML.command_description = "xml-converter";
+    create_XML.command_description = "Xml-converter";
     int convert_xml_result = execute(create_XML.command, create_XML.command_description);
     return convert_xml_result;
 }
@@ -73,7 +73,7 @@ int convert_to_xml() {
 int strip_absolute_path() {
     ConsoleCommand make_relative_path;
     make_relative_path.command = CMD_STRIP_ABSOLUTE_PATH;
-    make_relative_path.command_description = "create relative path";
+    make_relative_path.command_description = "Create relative path";
     int strip_command_result = execute(make_relative_path.command, make_relative_path.command_description);
     return strip_command_result;
 }
@@ -99,30 +99,21 @@ int delete_report() {
 // Launch Screen
 void print_lanuch_screen() {
     printf("\n");
-    printf("██╗  ██╗ ██████╗ ██████╗ ███████╗██████╗  ██████╗ ██████╗ ████████╗\n");
-    printf("██║ ██╔╝██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝\n");
-    printf("█████╔╝ ██║   ██║██████╔╝█████╗  ██████╔╝██║   ██║██████╔╝   ██║   \n");
-    printf("██╔═██╗ ██║   ██║██╔═══╝ ██╔══╝  ██╔═══╝ ██║   ██║██╔═══╝    ██║   \n");
-    printf("██║  ██╗╚██████╔╝██║     ███████╗██║     ╚██████╔╝██║        ██║   \n");
-    printf("╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝      ╚═════╝ ╚═╝        ╚═╝   \n");
-    printf("                                                                   \n");
-    printf("                   Welcome to XCReport - Version %s\n", APP_VERSION);
-    printf("                   Developed by Valerio D'Alessio\n");
+    printf("===================================================================\n");
+    printf("=                   XCReport - Version %s                        =\n", APP_VERSION);
+    printf("=               Developed by Valerio D'Alessio                    =\n");
+    printf("===================================================================\n");
     printf("\n");
 }
 
 void print_completion_message() {
     printf("\n");
-    printf(GREEN "========= Process Completed =========\n");
-    printf("                ✔ Success! 🎉\n");
-    printf("===========================================\n");
+    printf(GREEN "========= Process Completed Successfully! 🎉 =========\n");
 }
 
 void print_error_message() {
     printf("\n");
-    printf(RED "=========== Process Failed ============\n");
-    printf("                ✖ Error! ❌\n");
-    printf("===========================================\n");
+    printf(RED "=========== Process Failed ❌ ============\n");
 }
 
 int main(void) {
